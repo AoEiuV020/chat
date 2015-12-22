@@ -1,0 +1,7 @@
+*.i
+*.ii
+*.s
+*.o
+*.out
+tmp*
+temp*
