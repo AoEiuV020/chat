@@ -9,7 +9,6 @@
 #include <netinet/in.h>
 #include <arpa/inet.h> //inet_addr
 #include <sys/select.h>
-#include <event.h>
 int main(int argc, char **argv)
 {
 	char IP[30]="127.0.0.1";
