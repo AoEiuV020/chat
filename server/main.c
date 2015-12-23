@@ -90,16 +90,14 @@ int main(int argc, char **argv)
 
 						buf[len]=0;
 						int fdj;
-						for(fdj=3;fdj<=fdmax;++fdj)
+						for(fdj=0;fdj<=fdmax;++fdj)
 						{
-						favout(stderr,"%d,",
-     (((( &readset)->__fds_bits)[(( fdj) / (8 * (int) sizeof (__fd_mask)))] & ((__fd_mask) (1UL << (( fdj) % (8 * (int) sizeof (__fd_mask)))))) )
-	 );
-							if(fdj==sfd||fdj==fdi)
+							if(fdj==sfd||fdj==fdi||fdj==STDIN_FILENO||fdj==STDERR_FILENO)
 							{
 								continue;
 							}
-							avsyscall(write,fdj,buf,len);
+							write(fdj,buf,len);
+							//出错处理没有，
 						}
 					}
 					else
