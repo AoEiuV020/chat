@@ -9,13 +9,13 @@ all:ndk build start
 	echo OK...
 
 ndk:
-	ndk-build
+	-ndk-build
 
 build:
 	ant debug install
 
 install:
-	adb install -r bin/Hello-debug.apk
+	adb install -r bin/Chat-debug.apk
 
 start:
-	adb shell am start -n com.aoeiuv020.hello/.Main
+	adb shell am start -n com.aoeiuv020.chat/.Main
