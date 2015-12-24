@@ -9,7 +9,7 @@ all:ndk build start
 	echo OK...
 
 ndk:
-	-ndk-build
+	ndk-build
 
 build:
 	ant debug install

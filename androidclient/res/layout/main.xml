@@ -24,13 +24,27 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_weight="4"
+					android:id="@+id/ip"
+					android:singleLine="true"
+					android:hint="ip"
 					android:text="115.28.244.149"/>
 
 				<EditText
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_weight="1"
+					android:id="@+id/port"
+					android:singleLine="true"
+					android:hint="port"
 					android:text="45678"/>
+
+				<Button
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:id="@+id/connect"
+					android:singleLine="true"
+					android:text="conn"/>
 
 			</LinearLayout>
 
@@ -44,12 +58,8 @@
 				<ScrollView
 					android:layout_height="fill_parent"
 					android:layout_width="fill_parent"
+					android:id="@+id/messageview"
 					android:fillViewport="true" >
-					<EditText
-						android:layout_width="fill_parent"
-						android:layout_height="fill_parent"
-						android:gravity="top"
-						android:text="receive"/>
 				</ScrollView>
 			</LinearLayout>
 
@@ -68,7 +78,8 @@
 					<EditText
 						android:layout_width="fill_parent"
 						android:layout_height="fill_parent"
-						android:text="message">
+						android:id="@+id/sendtext"
+						android:hint="send">
 
 						<requestFocus/>
 
@@ -84,6 +95,7 @@
 				<Button
 					android:layout_width="fill_parent"
 					android:layout_height="fill_parent"
+					android:id="@+id/sendbutton"
 					android:text="Send"/>
 
 			</LinearLayout>
