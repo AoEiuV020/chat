@@ -39,6 +39,10 @@ jstring Java_com_aoeiuv020_chat_Main_errtostr(JNIEnv* env,jobject thiz,jint err)
 jint Java_com_aoeiuv020_chat_Main_recv(JNIEnv* env,jobject thiz)
 {
 	jclass cmain=(*env)->GetObjectClass(env,thiz);
+	jmethodID addmessage=(*env)->GetMethodID(env,cmain,"addmessage","(Ljava/lang/String;)V");
+	jstring message;
+	message=(*env)->NewStringUTF(env,"hello");
+	(*env)->CallVoidMethod(env,thiz,addmessage,message);
 	return (jint)0;
 }
 jint Java_com_aoeiuv020_chat_Main_send(JNIEnv* env,jobject thiz,jstring jmessage)
@@ -78,6 +82,5 @@ jint Java_com_aoeiuv020_chat_Main_connect(JNIEnv* env,jobject thiz,jstring jip,j
 		sfd=-1;
 		return (jint)errno;
 	}
-
 	return (jint)0;
 }

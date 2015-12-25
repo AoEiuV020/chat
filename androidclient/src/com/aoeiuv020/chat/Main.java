@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.Button;
 import android.widget.Toast;
-import android.widget.ScrollView;
+import android.widget.LinearLayout;
 import android.view.View;
 
 public class Main extends Activity
@@ -13,7 +13,7 @@ public class Main extends Activity
     /** Called when the activity is first created. */
 	EditText eip,eport,esendtext;
 	Button bconnect,bsendbutton;
-	ScrollView smessage;
+	LinearLayout smessage;
 	String message,ip;
 	int port;
     @Override
@@ -29,7 +29,7 @@ public class Main extends Activity
 			esendtext=(EditText)findViewById(R.id.sendtext);
 			bsendbutton=(Button)findViewById(R.id.sendbutton);
 			bconnect=(Button)findViewById(R.id.connect);
-			smessage=(ScrollView)findViewById(R.id.messageview);
+			smessage=(LinearLayout)findViewById(R.id.messageview);
 
 			bconnect.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View v)
@@ -66,6 +66,7 @@ public class Main extends Activity
 						}
 						else
 						{
+							addmessage(message);
 							esendtext.setText("");
 						}
 					}
@@ -95,7 +96,7 @@ public class Main extends Activity
 		EditText edittext;
 		edittext=new EditText(getApplicationContext());
 		edittext.setText(message);
-
+		smessage.addView(edittext);
 	}
 	public native int connect(String ip,int port);
 	public native int send(String message);
