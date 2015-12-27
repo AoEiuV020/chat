@@ -80,7 +80,7 @@ public class Main extends Activity
 					Toast.makeText(getApplicationContext(),str,Toast.LENGTH_SHORT).show();
 				}
 			});
-			recv();
+			init();
 		}
 		catch(Exception e)
 		{
@@ -100,7 +100,7 @@ public class Main extends Activity
 	}
 	public native int connect(String ip,int port);
 	public native int send(String message);
-	public native int recv();
+	public native int init();
 	public native String errtostr(int err);
 	static
 	{
